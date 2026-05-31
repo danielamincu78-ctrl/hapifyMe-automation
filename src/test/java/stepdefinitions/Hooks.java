@@ -12,7 +12,7 @@ public class Hooks {
     public void setup() {
         // Configurare globală Selenide
         Configuration.browser = "chrome";
-        Configuration.baseUrl = "[https://apps.qualiadept.eu/hapifyme/login_register.php]";
+        Configuration.baseUrl = "https://apps.qualiadept.eu/hapifyme";
         Configuration.browserSize = "1920x1080";
 
         System.out.println("--- Start Scenariu ---");

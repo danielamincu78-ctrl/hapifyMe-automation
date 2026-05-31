@@ -5,7 +5,7 @@ import pages.LoginPage;
 
 public class CommonSteps {
 
-    // 1. Instanțiem Page Object-ul creat la Pasul A
+    // 1. Instanțiem Page Object-ul
     LoginPage loginPage = new LoginPage();
 
     // 2. Mapăm textul din Gherkin (Pasul B)
@@ -19,6 +19,6 @@ public class CommonSteps {
         // Folosim un cont de test valid (hardcodat sau din config)
         loginPage.login("test.automat@qaschool.ro", "Password@123");
 
-        System.out.println("--- Background: Login complet. Începe testul de Search ---");
+        System.out.println("--- Background: Login complet. Începe testul de Update profile ---");
     }
 }

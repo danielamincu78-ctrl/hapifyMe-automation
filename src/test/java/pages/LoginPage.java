@@ -17,14 +17,21 @@ public class LoginPage {
         open("/login_register.php"); // Folosește baseUrl din Hooks
     }
 
+    public void enterEmail(String email) {
+        $(emailInput).setValue(email);
+    }
+
+    public void enterPassword(String password) {
+        $(passwordInput).setValue(password);
+    }
+
+    public void clickLogin() {
+        $(loginButton).click();
+    }
+
     public void login(String email, String password) {
         $(emailInput).setValue(email);
         $(passwordInput).setValue(password);
         $(loginButton).click();
     }
-
-
-    /*public String getErrorMessage() {
-        return errorMessage.getText();
-    }*/
 }
