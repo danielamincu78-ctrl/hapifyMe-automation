@@ -1,9 +1,13 @@
 package stepdefinitions;
 
+import io.cucumber.java.PendingException;
+import io.cucumber.java.en.And;
 import pages.ProfilePage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
+import io.cucumber.datatable.DataTable;
+import java.util.List;
+import java.util.Map;
 
 public class ProfileSteps {
     ProfilePage profilePage = new ProfilePage();
@@ -12,19 +16,17 @@ public class ProfileSteps {
         profilePage.openSettings();
     }
 
-    @When("utilizatorul introduce numele {string}")
-    public void inputFirstName(String firstName) {
-        profilePage.setFirstName(firstName);
-    }
+    @When("utilizatorul completeaza formularul cu urmatoarele date")
+    public void completeProfile(DataTable dataTable) {
 
-    @When("utilizatorul introduce prenumele {string}")
-    public void inputLastName(String lastName) {
-        profilePage.setLastName(lastName);
-    }
+        List<Map<String, String>> profileData =
+                dataTable.asMaps(String.class, String.class);
 
-    @When("utilizatorul introduce emailul profilului {string}")
-    public void inputEmail(String email) {
-        profilePage.setEmail(email);
+        Map<String, String> user = profileData.get(0);
+
+        profilePage.setFirstName(user.get("firstName"));
+        profilePage.setLastName(user.get("lastName"));
+        profilePage.setEmail(user.get("email"));
     }
 
     @When("utilizatorul apasa butonul Update Details")

@@ -8,9 +8,9 @@ Feature: Editare profil
 
   Scenario: Utilizatorul editeaza profilul
     When utilizatorul apasa butonul Settings
-    And utilizatorul introduce numele "test02"
-    And utilizatorul introduce prenumele "automat"
-    And utilizatorul introduce emailul profilului "test.automat@qaschool.ro"
+    And utilizatorul completeaza formularul cu urmatoarele date
+    |firstName|lastName|email|
+    |test02|automat|test.automat@qaschool.ro|
     And utilizatorul apasa butonul Update Details
     Then poate edita profilul
 
